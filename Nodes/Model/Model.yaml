@@ -1,0 +1,5 @@
+Name: Model
+Id: g=f30724cab1eb134879e18ccb4980078a
+Type: FolderType
+Children:
+- File: 'sub-tree/sub-tree.yaml'

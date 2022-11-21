@@ -1,0 +1,113 @@
+Name: Loggers
+Type: FolderType
+Children:
+- Name: EventLogger1
+  Type: EventLogger
+  Children:
+  - Name: Enabled
+    Type: PropertyType
+    DataType: Boolean
+    Value: true
+  - Name: Store
+    Type: NodePointer
+    DataType: NodeId
+    Value: {"IdType":2,"Id":"20694b548a0a2585889599ca39fc7f6a","Namespace":7}
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: {"Id":1,"Namespace":15}
+  - Name: EventConfigurations
+    Type: BaseObjectType
+    Children:
+    - Name: EventConfiguration1
+      Type: EventConfiguration
+      Children:
+      - Name: EventType
+        Type: NodePointer
+        DataType: NodeId
+        ReferenceType: HasProperty
+        Value: {"Id":2091}
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":2041}
+      - Name: EventSource
+        Type: NodePointer
+        DataType: NodeId
+        ReferenceType: HasProperty
+        Value: {"IdType":2,"Id":"f30724cab1eb134879e18ccb4980078a","Namespace":7}
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":58}
+      - Name: MonitorSubtree
+        Type: PropertyType
+        DataType: Boolean
+        Value: false
+  - Name: EventFieldPaths
+    Type: BaseObjectType
+    Children:
+    - Name: EventType
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:EventType"
+    - Name: SourceNode
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:SourceNode"
+    - Name: ActionTimeStamp
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:ActionTimeStamp"
+  - Name: EventArguments
+    Type: BaseObjectType
+    Children:
+    - Name: EventTypeId
+      Type: BaseDataVariableType
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: EventType
+      Type: BaseDataVariableType
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: SourceNode
+      Type: BaseDataVariableType
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: ActionTimeStamp
+      Type: BaseDataVariableType
+      DataType: UtcTime
+      Value: "1601-01-01T00:00:00.0000000"
+  - Name: EventFieldsToLog
+    Type: BaseObjectType
+    Children:
+    - Name: EventType
+      Type: EventFieldToLog
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../EventArguments/EventType"
+    - Name: SourceNode
+      Type: EventFieldToLog
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../EventArguments/SourceNode"
+    - Name: ActionTimeStamp
+      Type: EventFieldToLog
+      DataType: UtcTime
+      Value: "1601-01-01T00:00:00.0000000"
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../EventArguments/ActionTimeStamp"
